@@ -1,36 +1,25 @@
+html {
+  height: 100%;
+}
+
 body {
   margin: 0;
   padding: 0;
-  width: 100%;
+  height: 100%;
 }
 
 body .main-container {
   width: 100%;
   height: 100%;
-  position: absolute;
   background: white;
-  overflow: hidden;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
 }
 
 body .main-container .left-sidebar {
   background: #5959c9;
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
+  position: fixed;
   width: 12%;
   padding: 12px;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  height: 100vh;
 }
 
 body .main-container .left-sidebar .container {
@@ -68,7 +57,20 @@ body .main-container .left-sidebar .container .nav li:hover {
 }
 
 body .main-container .left-sidebar .container .bottom {
-  margin-bottom: 48px;
+  margin-bottom: 78px;
+}
+
+body .main-container .left-sidebar .container .bottom .storage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 body .main-container .left-sidebar .container .bottom .storage .top-left {
@@ -83,13 +85,7 @@ body .main-container .left-sidebar .container .bottom .storage .top-left img {
 
 body .main-container .left-sidebar .container .bottom .storage .top-left p {
   color: white;
-  margin-right: 64px;
-}
-
-body .main-container .left-sidebar .container .bottom .storage .content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  margin-right: 28px;
 }
 
 body .main-container .left-sidebar .container .bottom .storage .progress .line {
@@ -111,6 +107,7 @@ body .main-container .middle {
   -webkit-box-flex: 5;
       -ms-flex-positive: 5;
           flex-grow: 5;
+  overflow-y: scroll;
 }
 
 body .main-container .middle .container {
@@ -306,6 +303,8 @@ body .main-container .middle .recent-section .files {
           flex-direction: column;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  height: 400px;
+  overflow-y: scroll;
 }
 
 body .main-container .middle .recent-section .files .column .row {

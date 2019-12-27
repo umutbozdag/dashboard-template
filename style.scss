@@ -1,29 +1,25 @@
 $light-gray: #eeebeb63;
 
+html {
+    height: 100%;
+}
+
 body {
     margin: 0;
     padding: 0;
-    width: 100%;
+    height: 100%;
 
     .main-container {
         width: 100%;
         height: 100%;
-        position: absolute;
         background: white;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
 
         .left-sidebar {
             background: rgb(89, 89, 201);
-            position: absolute;
-            left: 0;
-            top: 0;
-            right: 0;
-            bottom: 0;
+            position: fixed;
             width: 12%;
             padding: 12px;
-            flex-grow: 1;
+            height: 100vh;
 
             .container {
                 padding: 24px;
@@ -58,9 +54,12 @@ body {
                 }
 
                 .bottom {
-                    margin-bottom: 48px;
+                    margin-bottom: 78px;
 
                     .storage {
+                        display: flex;
+                        justify-content: space-between;
+                        flex-direction: column;
 
                         .top-left {
                             display: flex;
@@ -72,14 +71,10 @@ body {
 
                             p {
                                 color: white;
-                                margin-right: 64px;
+                                margin-right: 28px;
                             }
 
 
-                        }
-
-                        .content {
-                            display: flex;
                         }
 
                         .progress {
@@ -101,6 +96,7 @@ body {
             align-items: center;
             margin-left: -128px;
             flex-grow: 5;
+            overflow-y: scroll;
 
             .container {
                 padding: 24px 48px;
@@ -136,7 +132,6 @@ body {
                 }
 
                 .projects-section {
-
                     .header {
                         display: flex;
                         align-items: center;
@@ -267,6 +262,8 @@ body {
                     display: flex;
                     flex-direction: column;
                     flex-wrap: wrap;
+                    height: 400px;
+                    overflow-y: scroll;
 
                     .column {
 
