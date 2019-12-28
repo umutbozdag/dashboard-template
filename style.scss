@@ -1,23 +1,18 @@
 $light-gray: #eeebeb63;
 
-html {
-    height: 100%;
-}
-
 body {
     margin: 0;
     padding: 0;
-    height: 100%;
 
     .main-container {
+        display: flex;
+        height: 100vh;
+        overflow: hidden;
         width: 100%;
-        height: 100%;
-        background: white;
 
         .left-sidebar {
             background: rgb(89, 89, 201);
-            position: fixed;
-            width: 12%;
+            flex: 1;
             padding: 12px;
             height: 100vh;
 
@@ -43,8 +38,6 @@ body {
                             text-decoration: none;
                             padding: 12px 0;
                         }
-
-
 
                     }
 
@@ -94,27 +87,24 @@ body {
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-left: -128px;
-            flex-grow: 5;
-            overflow-y: scroll;
+            flex: 14;
 
             .container {
-                padding: 24px 48px;
-                position: absolute;
-                bottom: 0;
-                top: 0;
-                width: 55%;
+                width: 100%;
                 border-right: 3px solid $light-gray;
+                padding: 24px;
+                margin-left: 12px;
 
-                .global-bar {
+                .global-bar-left {
                     display: flex;
+                    align-items: center;
+                    margin-bottom: 48px;
                     background: $light-gray;
-                    width: 40%;
-                    height: 3%;
+                    width: 35%;
                     border-radius: 24px;
                     align-items: center;
-                    padding: 8px;
-                    margin-bottom: 48px;
+                    padding: 12px;
+                    display: flex;
 
                     i {
                         color: #c0baba;
@@ -160,13 +150,14 @@ body {
                     .cards {
                         display: flex;
                         justify-content: center;
+                        flex-wrap: wrap;
 
                         .card {
                             background: $light-gray;
-                            padding: 16px 24px;
+                            padding: 14px 24px;
                             border-radius: 12px;
-                            width: 100%;
                             margin: 8px 8px;
+                            width: 290px;
 
                             .project-top {
                                 display: flex;
@@ -195,7 +186,6 @@ body {
                                         font-size: 12px;
                                         color: #4C52BC;
                                         font-weight: 800;
-                                        overflow: hidden;
                                     }
 
                                     .progress-bar {
@@ -262,8 +252,8 @@ body {
                     display: flex;
                     flex-direction: column;
                     flex-wrap: wrap;
-                    height: 400px;
                     overflow-y: scroll;
+                    height: 400px;
 
                     .column {
 
@@ -325,5 +315,201 @@ body {
                 }
             }
         }
+
+        .right-sidebar {
+            flex: 5;
+
+            .container {
+                padding: 24px;
+
+                .global-bar-right {
+                    display: flex;
+                    align-items: center;
+
+                    i {
+                        color: gray;
+                        cursor: pointer;
+                        transition: all 0.2s ease;
+                    }
+
+                    img {
+                        margin-right: 12px;
+                        margin-left: auto;
+                    }
+
+                    p {
+                        margin-right: 24px;
+                        cursor: pointer;
+                    }
+
+
+                    .fa-circle {
+                        color: #F98E73;
+                        font-size: 6px;
+                        position: absolute;
+                    }
+
+                    i:hover {
+                        color: black;
+                    }
+
+                    i:hover .fa-circle {
+                        color: red;
+                    }
+
+                }
+
+                .activities-section {
+                    .header {
+                        border-bottom: 2px solid $light-gray;
+                        margin-bottom: 24px;
+
+                        h2 {
+
+                            font-weight: 500;
+                            font-size: 22px;
+                        }
+                    }
+
+                    .activity {
+
+                        .circle {
+                            border-left: 3px solid $light-gray;
+                            margin-top: 24px;
+
+                            .fa-circle {
+                                font-size: 8px;
+                                position: relative;
+                                bottom: 20px;
+                                right: 14px;
+                                padding: 8px;
+                            }
+                        }
+
+                        .circle--gray {
+                            color: #868181;
+                            background: #c9c7c77a;
+                            border-radius: 50%;
+                        }
+
+                        .circle--orange {
+                            color: orange;
+                            background: #c9c7c77a;
+                            border-radius: 50%;
+                        }
+
+                        .circle--blue {
+                            color: aqua;
+                            background: #c9c7c77a;
+                            border-radius: 50%;
+                        }
+
+                        .circle--red {
+                            color: red;
+                            background: #c9c7c77a;
+                            border-radius: 50%;
+                        }
+
+                        .activity__content {
+                            display: flex;
+                            align-items: center;
+
+                            .activity__description {
+                                margin-right: auto;
+                                margin-left: 6px;
+                                width: 70%;
+
+                            }
+
+                            .time {
+                                color: gray;
+                            }
+                        }
+
+                        .activity__images {
+                            margin-left: 24px;
+
+                            img:first-child {
+                                margin-right: 6px;
+                            }
+                        }
+                    }
+                }
+
+                .refer-friend-card {
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 128px;
+
+                    .content {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        border: 4px solid $light-gray;
+                        border-radius: 24px;
+                        padding: 12px;
+                        width: 60%;
+                        position: relative;
+
+                        .fa-times {
+                            position: absolute;
+                            right: 20px;
+                            color: gray;
+                            cursor: pointer;
+                            font-size: 14px;
+
+                        }
+
+                        .fa-times:hover {
+                            color: black;
+                        }
+
+                        h3 {
+                            font-weight: 400;
+                            margin-bottom: 2px;
+                            margin-top: 2px;
+                        }
+
+                        p {
+                            color: gray;
+                        }
+
+                        img {}
+                    }
+
+                }
+            }
+        }
     }
 }
+
+/* Custom Scrollbar */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 24px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #8b8989;
+    border-radius: 24px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #5c5a5a;
+
+}
+
+abbr {
+    text-decoration: none;
+    outline: none;
+    border-bottom: none;
+}
+
+/* media 960px */

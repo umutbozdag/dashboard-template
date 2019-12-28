@@ -1,23 +1,22 @@
-html {
-  height: 100%;
-}
-
 body {
   margin: 0;
   padding: 0;
-  height: 100%;
 }
 
 body .main-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
   width: 100%;
-  height: 100%;
-  background: white;
 }
 
 body .main-container .left-sidebar {
   background: #5959c9;
-  position: fixed;
-  width: 12%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   padding: 12px;
   height: 100vh;
 }
@@ -103,45 +102,42 @@ body .main-container .middle {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-left: -128px;
-  -webkit-box-flex: 5;
-      -ms-flex-positive: 5;
-          flex-grow: 5;
-  overflow-y: scroll;
+  -webkit-box-flex: 14;
+      -ms-flex: 14;
+          flex: 14;
 }
 
 body .main-container .middle .container {
-  padding: 24px 48px;
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  width: 55%;
+  width: 100%;
   border-right: 3px solid #eeebeb63;
+  padding: 24px;
+  margin-left: 12px;
 }
 
-body .main-container .middle .container .global-bar {
+body .main-container .middle .container .global-bar-left {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background: #eeebeb63;
-  width: 40%;
-  height: 3%;
-  border-radius: 24px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 8px;
   margin-bottom: 48px;
+  background: #eeebeb63;
+  width: 35%;
+  border-radius: 24px;
+  align-items: center;
+  padding: 12px;
+  display: flex;
 }
 
-body .main-container .middle .container .global-bar i {
+body .main-container .middle .container .global-bar-left i {
   color: #c0baba;
   font-size: 18px;
   margin-left: 8px;
   margin-right: 8px;
 }
 
-body .main-container .middle .container .global-bar input {
+body .main-container .middle .container .global-bar-left input {
   border: 0;
   background: transparent;
   width: 100%;
@@ -185,14 +181,16 @@ body .main-container .middle .container .projects-section .cards {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 body .main-container .middle .container .projects-section .cards .card {
   background: #eeebeb63;
-  padding: 16px 24px;
+  padding: 14px 24px;
   border-radius: 12px;
-  width: 100%;
   margin: 8px 8px;
+  width: 290px;
 }
 
 body .main-container .middle .container .projects-section .cards .card .project-top {
@@ -221,7 +219,6 @@ body .main-container .middle .container .projects-section .cards .card .project-
   font-size: 12px;
   color: #4C52BC;
   font-weight: 800;
-  overflow: hidden;
 }
 
 body .main-container .middle .container .projects-section .cards .card .project-bottom .progress .progress-bar {
@@ -303,8 +300,8 @@ body .main-container .middle .recent-section .files {
           flex-direction: column;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  height: 400px;
   overflow-y: scroll;
+  height: 400px;
 }
 
 body .main-container .middle .recent-section .files .column .row {
@@ -372,4 +369,207 @@ body .main-container .middle .recent-section .files .column .row:hover {
 body .main-container .middle .recent-section .files .column .row:hover .dots {
   visibility: visible;
 }
+
+body .main-container .right-sidebar {
+  -webkit-box-flex: 5;
+      -ms-flex: 5;
+          flex: 5;
+}
+
+body .main-container .right-sidebar .container {
+  padding: 24px;
+}
+
+body .main-container .right-sidebar .container .global-bar-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .main-container .right-sidebar .container .global-bar-right i {
+  color: gray;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+body .main-container .right-sidebar .container .global-bar-right img {
+  margin-right: 12px;
+  margin-left: auto;
+}
+
+body .main-container .right-sidebar .container .global-bar-right p {
+  margin-right: 24px;
+  cursor: pointer;
+}
+
+body .main-container .right-sidebar .container .global-bar-right .fa-circle {
+  color: #F98E73;
+  font-size: 6px;
+  position: absolute;
+}
+
+body .main-container .right-sidebar .container .global-bar-right i:hover {
+  color: black;
+}
+
+body .main-container .right-sidebar .container .global-bar-right i:hover .fa-circle {
+  color: red;
+}
+
+body .main-container .right-sidebar .container .activities-section .header {
+  border-bottom: 2px solid #eeebeb63;
+  margin-bottom: 24px;
+}
+
+body .main-container .right-sidebar .container .activities-section .header h2 {
+  font-weight: 500;
+  font-size: 22px;
+}
+
+body .main-container .right-sidebar .container .activities-section .activity .circle {
+  border-left: 3px solid #eeebeb63;
+  margin-top: 24px;
+}
+
+body .main-container .right-sidebar .container .activities-section .activity .circle .fa-circle {
+  font-size: 8px;
+  position: relative;
+  bottom: 20px;
+  right: 14px;
+  padding: 8px;
+}
+
+body .main-container .right-sidebar .container .activities-section .activity .circle--gray {
+  color: #868181;
+  background: #c9c7c77a;
+  border-radius: 50%;
+}
+
+body .main-container .right-sidebar .container .activities-section .activity .circle--orange {
+  color: orange;
+  background: #c9c7c77a;
+  border-radius: 50%;
+}
+
+body .main-container .right-sidebar .container .activities-section .activity .circle--blue {
+  color: aqua;
+  background: #c9c7c77a;
+  border-radius: 50%;
+}
+
+body .main-container .right-sidebar .container .activities-section .activity .circle--red {
+  color: red;
+  background: #c9c7c77a;
+  border-radius: 50%;
+}
+
+body .main-container .right-sidebar .container .activities-section .activity .activity__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .main-container .right-sidebar .container .activities-section .activity .activity__content .activity__description {
+  margin-right: auto;
+  margin-left: 6px;
+  width: 70%;
+}
+
+body .main-container .right-sidebar .container .activities-section .activity .activity__content .time {
+  color: gray;
+}
+
+body .main-container .right-sidebar .container .activities-section .activity .activity__images {
+  margin-left: 24px;
+}
+
+body .main-container .right-sidebar .container .activities-section .activity .activity__images img:first-child {
+  margin-right: 6px;
+}
+
+body .main-container .right-sidebar .container .refer-friend-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 128px;
+}
+
+body .main-container .right-sidebar .container .refer-friend-card .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 4px solid #eeebeb63;
+  border-radius: 24px;
+  padding: 12px;
+  width: 60%;
+  position: relative;
+}
+
+body .main-container .right-sidebar .container .refer-friend-card .content .fa-times {
+  position: absolute;
+  right: 20px;
+  color: gray;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+body .main-container .right-sidebar .container .refer-friend-card .content .fa-times:hover {
+  color: black;
+}
+
+body .main-container .right-sidebar .container .refer-friend-card .content h3 {
+  font-weight: 400;
+  margin-bottom: 2px;
+  margin-top: 2px;
+}
+
+body .main-container .right-sidebar .container .refer-friend-card .content p {
+  color: gray;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 24px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #8b8989;
+  border-radius: 24px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #5c5a5a;
+}
+
+abbr {
+  text-decoration: none;
+  outline: none;
+  border-bottom: none;
+}
+
+/* media 960px */
 /*# sourceMappingURL=style.css.map */
